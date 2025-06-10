@@ -31,6 +31,9 @@ const icon =  `https://openweathermap.org/img/wn/${resp_json.weather[0].icon}@2x
 
 const imageClima = document.querySelector('.campoImg');
 imageClima.src = icon;
+
+const descricaoTempo = document.querySelector('.descriçãoTempo');
+descricaoTempo.innerHTML = resp_json.weather[0].description;
  
 
 } 
