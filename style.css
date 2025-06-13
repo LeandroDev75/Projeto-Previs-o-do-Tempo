@@ -10,12 +10,12 @@ background-color: #357cff;
 main {
 border: solid 1px black;
     width: 50%;
-    height: 60%;
+    height: 80%;
     padding: 10px;
     display: flex;
 flex-direction: column;
 align-items: center;
-margin-top: 100px;
+margin-top: 70px;
 
 }
 
@@ -53,7 +53,7 @@ img {
     border-radius: 10px;
     margin-top: 10px;
     word-break: break-all;
-    width: 60%;
+    width: 90%;
     height: 90%;
     background-color: rgb(255, 255, 255);
 
@@ -69,7 +69,7 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 
 #degree {
 font-family: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif';
-font-size: 40px;
+font-size: 400%;
 color: white;
 
 }
@@ -78,11 +78,17 @@ color: white;
 
 display: flex;
 width: 90%;
-height: 40%;
+height: 70%;
 align-items: center;
 justify-content: space-around;
 background-color: #0377fc;
 border-radius: 10px;
+
+}
+
+.campoImg {
+
+    width: 50%;
 
 }
 
@@ -102,14 +108,72 @@ flex-direction: column;
     font-family: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif';
 }
 
-.min-temp {
-    border: solid 1px black;
-    width: 40px;
-    height: 40px;
+
+.containerTempo {
+display: flex;
+width: 100%;
+height: 100%;
+align-items: center;
+border: solid 1px red;
+flex-direction: column;
+
 }
 
-.max-temp {
- border: solid 1px black;
-    width: 40px;
-    height: 40px;   
+.info-extras {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    justify-content: space-around;
+    width: 90%;
+
+    
 }
+
+.min-temp, .max-temp, .feels-temp, .humidity-temp,
+.pressure-temp, .wind-temp, .speed-wind {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;    
+    font-size: 18px; 
+    font-family: Arial, Helvetica, sans-serif; 
+    font-weight: 600;
+}
+
+.container-temp-min, .container-temp-max, 
+.container-temp-feels, .container-temp-humidity, 
+.container-temp-pressure, .container-temp-wind {
+    display: flex;
+    border: solid 1px black;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.fa-temperature-low, .fa-temperature-high, 
+.fa-temperature-half, .fa-droplet, .fa-gauge, 
+.fa-wind {
+    font-size: 20px;
+    margin: 5px 0 5px 5px;
+}
+
+#icon-e-min, #icon-e-max, #icon-e-feels, #icon-e-humidity, 
+#icon-e-pressure, #icon-e-wind {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+#text-min-temp, #text-max-temp, 
+#text-feels-temp, #text-humidity-temp, 
+#text-pressure-temp, #text-wind-temp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Verdana, Tahoma, sans-serif;
+    
+}
+

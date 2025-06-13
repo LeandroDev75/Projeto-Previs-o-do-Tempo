@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Previsão do Tempo</title>
 </head>
 <body>
@@ -23,22 +24,99 @@
 
     </section>
 
+    <div class="containerTempo">
     <div class="containerDegree">
-        
+       
     <img class="campoImg" src="" alt="clima">
-    
-    
+        
     <div class="degree-e-decricao">
     <span id="degree"></span>
     <div class="descriçãoTempo"></div>
     </div>
+    </div> 
 
-    <div class="info-extras">
+    
+<!-- -------------------inicio info-extras----------------------------------- -->
+
+<div class="info-extras">
+    <div class="container-temp-min">
+        <div id="subcontainer-min">
+        <div id="description-temp-min">
+            <div id="text-min-temp">Mínima</div>
+        </div>
+    <div id="icon-e-min">
+        <i class="fa-solid fa-temperature-low"></i> <!--Icone Temperatura min.-->
         <div class="min-temp"></div>
+        </div>
+        </div>
+        </div>
+        <div class="container-temp-max">
+        <div id="subcontainer-max">
+        <div id="description-temp-max">
+            <div id="text-max-temp">Máxima</div>
+        </div>
+    <div id="icon-e-max">
+        <i class="fa-solid fa-temperature-high"></i> <!--Icone Temperatura max.-->
         <div class="max-temp"></div>
+        </div>
+        </div>
+        </div>
+
+       <div class="container-temp-feels">
+        <div id="subcontainer-feels">
+        <div id="description-temp-feels">
+            <div id="text-feels-temp">Sensação</div>
+        </div>
+    <div id="icon-e-feels">
+        <i class="fa-solid fa-temperature-half"></i> <!--Icone Temperatura min.-->
+        <div class="feels-temp"></div>
+        </div>
+        </div>
+        </div> 
+
+    <div class="container-temp-humidity">
+        <div id="subcontainer-humidity">
+        <div id="description-humidity">
+            <div id="text-humidity-temp">Humidade</div>
+        </div>
+    <div id="icon-e-humidity">
+        <i class="fa-solid fa-droplet"></i> <!--Icone umidade.-->
+        <div class="humidity-temp"></div>
+        </div>
+        </div>
+        </div>
+        
+    <div class="container-temp-pressure">
+        <div id="subcontainer-pressure">
+        <div id="description-pressure">
+            <div id="text-pressure-temp">P.Atm</div>
+        </div>
+    <div id="icon-e-pressure">
+        <i class="fa-solid fa-gauge"></i> <!--Icone pressão.-->
+        <div class="pressure-temp"></div>
+        </div>
+        </div>
+        </div>  
+        
+    <div class="container-temp-wind">
+        <div id="subcontainer-wind">
+        <div id="description-wind">
+            <div id="text-wind-temp">Direção do Vento</div>
+        </div>
+    <div id="icon-e-wind">
+        <i class="fa-solid fa-wind"></i> <!--Icone vento.-->
+        <div class="wind-temp"></div>
+        <div class="speed-wind"></div>
+        </div>
+        </div>
+        </div>  
+        
+                
     </div>
 
-</div>
+<!-- ---------------------Fim info-extras-------------------------------------- -->
+
+    </div>
 
 </div>
 
