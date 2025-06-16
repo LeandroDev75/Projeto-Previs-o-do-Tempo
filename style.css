@@ -54,7 +54,7 @@ img {
     margin-top: 10px;
     word-break: break-all;
     width: 90%;
-    height: 90%;
+    height: 80%;
     background-color: rgb(255, 255, 255);
 
 }
@@ -74,11 +74,20 @@ color: white;
 
 }
 
+.container-degree-img {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: center;
+    
+}
+
 .containerDegree {
 
 display: flex;
-width: 90%;
-height: 70%;
+flex-direction: column;
+width: 95%;
+height: 90%;
 align-items: center;
 justify-content: space-around;
 background-color: #0377fc;
@@ -100,6 +109,8 @@ flex-direction: column;
 .degree-e-decricao {
 display: flex;
 flex-direction: column;
+justify-content: center;
+align-items: center;
 }
 
 .descriçãoTempo {
