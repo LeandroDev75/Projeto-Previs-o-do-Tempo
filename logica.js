@@ -25,7 +25,7 @@ const urlApi = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURICom
  cityLocal.innerHTML = `${resp_json.name} , ${resp_json.sys.country}`;
 
 const degreeLocal = document.getElementById('degree');
-degreeLocal.innerHTML = `${resp_json.main.temp}<sup>°C</sup>`
+degreeLocal.innerHTML = `${resp_json.main.temp.toFixed(1)}<sup>°C</sup>`
 
 const icon =  `https://openweathermap.org/img/wn/${resp_json.weather[0].icon}@2x.png`;
 
