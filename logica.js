@@ -58,93 +58,51 @@ const value_wind = '';
 
 console.log(resp_wind);
 // Tabela de direção do vento em graus
-// N  348.76° → 11.25° / NNE  11.26° → 33.75° / NE  33.76° → 56.25°
-// ENE	56.26° → 78.75° / E	78.76° → 101.25° / ESE	101.26° → 123.75°
-// SE	123.76° → 146.25° / SSE	146.26° → 168.75° / S 168.76° → 191.25°
-// SSW	191.26° → 213.75° / SW	213.76° → 236.25° / WSW	236.26° → 258.75°
-// W 258.76° → 281.25° / WNW 281.26° → 303.75° / NW  303.76° → 326.25°
-// NNW	326.26° → 348.75°
+// Norte	  N	 337,5° – 22,5°  // Nordeste  NE 22,5° – 67,5° // Leste	  E	 67,5° – 112,5°
+// Sudeste	  SE 112,5° – 157,5° // Sul	      S	 157,5° – 202,5° // Sudoeste  SW 202,5° – 247,5°
+// Oeste	  W	 247,5° – 292,5° // Noroeste NW	 292,5° – 337,5°
 
-const wind_N = resp_wind >= 348.76 && resp_wind <= 11.25;
-const wind_N_NE = resp_wind >= 11.26 && resp_wind <= 33.75;
-const wind_NE = resp_wind >= 33.76 && resp_wind <= 56.25;
-const wind_E_NE = resp_wind >= 56.26 && resp_wind <= 78.75;
-const wind_E = resp_wind >= 78.76 && resp_wind <= 101.25;
-const wind_E_SE = resp_wind >= 101.26 && resp_wind <= 123.75;
-const wind_SE = resp_wind >= 123.76 && resp_wind <= 146.25;
-const wind_S_SE = resp_wind >= 146.26 && resp_wind <= 168.75;
-const wind_S = resp_wind >= 168.76 && resp_wind <= 191.25;
-const wind_S_SW = resp_wind >= 191.26 && resp_wind <= 213.75;
-const wind_SW = resp_wind >= 213.76 && resp_wind <= 236.25;
-const wind_W_SW = resp_wind >= 236.26 && resp_wind <= 258.75;
-const wind_W = resp_wind >= 258.76 && resp_wind <= 281.25;
-const wind_W_NW = resp_wind >= 281.26 && resp_wind <= 303.75;
-const wind_NW = resp_wind >= 303.76 && resp_wind <= 326.25;
-const wind_N_NW = resp_wind >= 326.26 && resp_wind <= 348.75;
+const wind_N = resp_wind >= 337.6 && resp_wind <= 22.5;
+const wind_NE = resp_wind >= 22.6 && resp_wind <= 67.5;
+const wind_E = resp_wind >= 67.6 && resp_wind <= 112.5;
+const wind_SE = resp_wind >= 112.6 && resp_wind <= 157.5;
+const wind_S = resp_wind >= 157.6 && resp_wind <= 202.5;
+const wind_SW = resp_wind >= 202.6 && resp_wind <= 247.5;
+const wind_W = resp_wind >= 247.6 && resp_wind <= 292.5;
+const wind_NW = resp_wind >= 292.6 && resp_wind <= 337.5;
+
 
 
 if (wind_N) {
     temp_wind.innerHTML = 'Norte';
 }
 
-else if (wind_N_NE) {
-    temp_wind.innerHTML = 'Norte a Nordeste';
-}
-
 else if (wind_NE) {
     temp_wind.innerHTML = 'Nordeste';
-}
-
-else if (wind_E_NE) {
-    temp_wind.innerHTML = 'Leste a Nordeste';
 }
 
 else if (wind_E) {
     temp_wind.innerHTML = 'Leste';
 }
 
-else if (wind_E_SE) {
-    temp_wind.innerHTML = 'Leste a Sudeste';
-}
-
 else if (wind_SE) {
     temp_wind.innerHTML = 'Sudeste';
-}
-
-else if (wind_S_SE) {
-    temp_wind.innerHTML = 'Sul a Sudeste';
 }
 
 else if (wind_S) {
     temp_wind.innerHTML = 'Sul';
 }
 
-else if (wind_S_SW) {
-    temp_wind.innerHTML = 'Sul a Sudoeste';
-}
-
 else if (wind_SW) {
     temp_wind.innerHTML = 'Sudoeste';
-}
-
-else if (wind_W_SW) {
-    temp_wind.innerHTML = 'Oeste a Sudoeste';
 }
 
 else if (wind_W) {
     temp_wind.innerHTML = 'Oeste';
 }
 
-else if (wind_W_NW) {
-    temp_wind.innerHTML = 'Oeste a Noroeste';
-}
-
 else if (wind_NW) {
     temp_wind.innerHTML = 'Noroeste';
-}
-
-else if (wind_N_NW) {
-    temp_wind.innerHTML = 'Norte a Noroeste';
 }
 
 
