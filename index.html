@@ -10,10 +10,14 @@
 <body>
     <main>
     
-<header>
+<header id="container-header">
+    <h1 id="text-title">Previsão do Tempo</h1>
+    <div id="container-input-button">
+        <h3 id="text-before-input">Digite o nome da cidade</h3>
     <form class="divForm">
     <input id="campoInput" type="text">
     <button class="buttonPesquisar" type="submit">Pesquisar</button>
+    </div>
 </form>
 
 </header>
@@ -25,17 +29,17 @@
     </section>
 
     <div class="containerTempo">
-    <div class="containerDegree">
-     <div class="container-degree-img">  
+         <div class="container-img-degree-description"> 
+        <div class="description-degree"> 
     <img class="campoImg" src="" alt="clima">
-        
-    <div class="degree-e-decricao">
     <span id="degree"></span>
-    <div class="descriçãoTempo"></div>
-    </div>
+    </div>   
+    
+    <div class="descricaoTempo"></div>
+    
     </div>
 
-    </div> 
+     
 <!-- -------------------inicio info-extras----------------------------------- -->
 
 <div class="info-extras">
@@ -89,7 +93,7 @@
     <div class="container-temp-pressure">
         <div id="subcontainer-pressure">
         <div id="description-pressure">
-            <div id="text-pressure-temp">P.Atm</div>
+            <div id="text-pressure-temp">Pressão Atm</div>
         </div>
     <div id="icon-e-pressure">
         <i class="fa-solid fa-gauge"></i> <!--Icone pressão.-->
