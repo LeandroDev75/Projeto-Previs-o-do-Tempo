@@ -1,7 +1,75 @@
+// Insere a Geolocalização do navegador na pesquisa
+
+    function localizacaoAtual() {
+    if ("geolocation" in navigator) {
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+
+      console.log("Latitude:", latitude);
+      console.log("Longitude:", longitude);
+
+      // Aqui você chama a API de previsão do tempo com essas coordenadas
+    async function buscarPrevisaoDoTempo(latitude, longitude) {
+
+        const apiKey1 = 'd5c6809eaeb8e012b3b935ab6f1be1d7';
+        const limit = 5;  //Quantidade limite de nomes
+const apiGeo = `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=${limit}&appid=${apiKey1}`;
+
+
+const respGeo = await fetch(apiGeo);
+
+    const respGeo_json = await respGeo.json();
+
+    console.log(respGeo_json);
+
+    // Pega o input
+  const cityName = document.getElementById('campoInput');
+  const cityLocation = respGeo_json[0].name;
+
+  // Insere o nome da cidade no input
+ cityName.value = cityLocation;
+
+  // Opcional: enviar o formulário automaticamente se quiser:
+  document.querySelector('.divForm').dispatchEvent(new Event('submit'));
+  
+
+    
+    }
+
+    buscarPrevisaoDoTempo(latitude, longitude);
+
+   
+      },      
+    
+
+    (error) => {
+      console.error("Erro ao obter localização:", error.message);
+      alert("Não foi possível obter sua localização.");
+    }
+  );
+} else {
+  alert("Geolocalização não é suportada no seu navegador.");
+}
+
+}
+
+localizacaoAtual();
+
+
+
 document.querySelector('.divForm').addEventListener('submit', (event) => {
     event.preventDefault();
 
     const cidade = document.getElementById('campoInput').value;
+    const cityName = document.getElementById('campoInput');
+    
+
+
+
+
+
 
 
 async function chamarApi() {
@@ -32,17 +100,21 @@ const icon =  `https://openweathermap.org/img/wn/${resp_json.weather[0].icon}@2x
 const imageClima = document.querySelector('.campoImg');
 imageClima.src = icon;
 
-const descricaoTempo = document.querySelector('.descriçãoTempo');
-descricaoTempo.innerHTML = resp_json.weather[0].description;
+const descricaoTempo = document.querySelector('.descricaoTempo');
+const respDescricaoTempo = resp_json.weather[0].description;
+const descricaoTempoCapitalizado = respDescricaoTempo.charAt(0).toUpperCase() + respDescricaoTempo.slice(1);
+
+descricaoTempo.textContent = descricaoTempoCapitalizado;
+
 
 const temp_min = document.querySelector('.min-temp');
-temp_min.innerHTML = `${resp_json.main.temp_min}<sup>°C</sup>`;
+temp_min.innerHTML = `${resp_json.main.temp_min.toFixed(1)}<sup>°C</sup>`;
 
 const temp_max = document.querySelector('.max-temp');
-temp_max.innerHTML = `${resp_json.main.temp_max}<sup>°C</sup>`;
+temp_max.innerHTML = `${resp_json.main.temp_max.toFixed(1)}<sup>°C</sup>`;
 
 const temp_feels = document.querySelector('.feels-temp');
-temp_feels.innerHTML = `${resp_json.main.feels_like}<sup>°C</sup>`;
+temp_feels.innerHTML = `${resp_json.main.feels_like.toFixed(1)}<sup>°C</sup>`;
 
 const temp_humidity = document.querySelector('.humidity-temp');
 temp_humidity.innerHTML = `${resp_json.main.humidity}%`;
@@ -62,7 +134,7 @@ console.log(resp_wind);
 // Sudeste	  SE 112,5° – 157,5° // Sul	      S	 157,5° – 202,5° // Sudoeste  SW 202,5° – 247,5°
 // Oeste	  W	 247,5° – 292,5° // Noroeste NW	 292,5° – 337,5°
 
-const wind_N = resp_wind >= 337.6 && resp_wind <= 22.5;
+const wind_N = resp_wind >= 337.6 || resp_wind <= 22.5;
 const wind_NE = resp_wind >= 22.6 && resp_wind <= 67.5;
 const wind_E = resp_wind >= 67.6 && resp_wind <= 112.5;
 const wind_SE = resp_wind >= 112.6 && resp_wind <= 157.5;
@@ -71,38 +143,36 @@ const wind_SW = resp_wind >= 202.6 && resp_wind <= 247.5;
 const wind_W = resp_wind >= 247.6 && resp_wind <= 292.5;
 const wind_NW = resp_wind >= 292.6 && resp_wind <= 337.5;
 
-
-
 if (wind_N) {
-    temp_wind.innerHTML = 'Norte';
+    temp_wind.innerHTML = 'N';
 }
 
 else if (wind_NE) {
-    temp_wind.innerHTML = 'Nordeste';
+    temp_wind.innerHTML = 'NE';
 }
 
 else if (wind_E) {
-    temp_wind.innerHTML = 'Leste';
+    temp_wind.innerHTML = 'E';
 }
 
 else if (wind_SE) {
-    temp_wind.innerHTML = 'Sudeste';
+    temp_wind.innerHTML = 'SE';
 }
 
 else if (wind_S) {
-    temp_wind.innerHTML = 'Sul';
+    temp_wind.innerHTML = 'S';
 }
 
 else if (wind_SW) {
-    temp_wind.innerHTML = 'Sudoeste';
+    temp_wind.innerHTML = 'SW';
 }
 
 else if (wind_W) {
-    temp_wind.innerHTML = 'Oeste';
+    temp_wind.innerHTML = 'W';
 }
 
 else if (wind_NW) {
-    temp_wind.innerHTML = 'Noroeste';
+    temp_wind.innerHTML = 'NW';
 }
 
 
@@ -113,6 +183,7 @@ wind_speed.innerHTML = `${resp_json.wind.speed} Km/h`;
 chamarApi();
 
 });
+
 
 
 
